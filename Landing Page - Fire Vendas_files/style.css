@@ -1,0 +1,1358 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* bloqueia rolagem lateral */
+  width: 100%;
+}
+
+  
+  /* Background com a imagem e overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("fundo_otimizado.webp");
+
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.5;
+    filter: brightness(0.4);
+  }
+  
+  .hidden {
+    display: none;
+    opacity: 0;
+  }
+  
+  /* .intro-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+} */
+
+  /* Hero */
+  .hero-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+    gap: 40px;
+    transition: opacity 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    max-width: 750px;
+    padding-left: 50px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-top: 120px;
+    margin-left: 80px;
+  }
+  
+  .highlight {
+    color: rgb(255, 0, 0);
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-left: 80px;
+  }
+  
+  .cta-button {
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+    margin-left: 80px;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+  
+  .hero-image {
+    margin-top: -160px;
+    position: relative;
+    right: 270px;
+  }
+  
+  .hero-image img {
+    max-width: 170%;
+    height: auto;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-up {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+  .hero-content h1 { animation-delay: 0.2s; }
+  .hero-content p { animation-delay: 0.4s; }
+  .cta-button { animation-delay: 0.6s; }
+  .hero-image { animation-delay: 0.8s; }
+  
+  /* Divisor */
+  .divisao {
+    background-color: black;
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2100px;
+  }
+  .line {
+    width: 800px;
+    height: 2px;
+    background: linear-gradient(135deg, #eb1919, #f16726);
+    margin: 0 10px;
+  }
+  .icon {
+    width: 95px;
+    height: auto;
+  }
+  
+  /* Resultados (Carrossel) */
+
+  
+
+  .resultados {
+    margin-top: -150px;
+    background: #000;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+    /* Seção Resultados */
+
+
+  .resultados h2 {
+    margin-top: 50px;
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+    color: #fff;
+    line-height: 1.4;
+  }
+  
+  .highlight-green {
+    color: #ff3e24;
+  }
+  
+  /* Container do Swiper */
+  .resultados .swiper {
+    width: 100%;
+    max-width: 1400px; /* aumenta limite para as setas não cortarem */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Slides */
+  .resultados .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resultados .swiper-slide img {
+    max-width: 320px;
+    border: 2px solid #ff3e24;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.5);
+  }
+
+  .resultados-swiper img {
+  width: 100%;           /* ocupa toda a largura do slide */
+  max-width: 320px;      /* define um tamanho máximo */
+  height: 550px;         /* força a mesma altura */
+  object-fit: cover;     /* corta proporcionalmente sem distorcer */
+  border-radius: 10px;   /* opcional — bordas arredondadas */
+  margin: 0 auto;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+    /* Container do Swiper */
+  .resultados .swiper {
+    width: 100%;
+    max-width: 1900px; /* aumenta limite para as setas não cortarem */
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .resultados-swiper img {
+    max-width: 220px;
+    height: 420px;
+  }
+}
+  
+  /* Paginação (bolinhas) */
+  .resultados .swiper-pagination {
+    position: relative;   /* relativo ao carrossel */
+    bottom: -25px;        /* joga mais pra baixo */
+    margin-top: 50px;     /* espaço extra */
+    text-align: center;
+  }
+  
+  .resultados .swiper-pagination-bullet {
+    background: #ff3e24;  /* cor bolinhas inativas */
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  
+  .resultados .swiper-pagination-bullet-active {
+    background: #ffffff; /* cor bolinha ativa */
+    opacity: 1;
+  }
+  
+  /* Setas */
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* Ícones das setas (SVG) */
+  .swiper-button-prev svg,
+  .swiper-button-next svg {
+    color: #ff3e24;
+    fill: #ff3e24 !important;   /* cor verde neon */
+    stroke: #ff3e24 !important; /* reforço */
+    width: 29px !important;
+    height: 34px !important;
+  }
+  
+  /* Posição das setas */
+  .swiper-button-prev {
+    left: -40px;  /* mais pra fora do container */
+  }
+  
+  .swiper-button-next {
+    right: -40px;
+  }
+
+  .resultadop{
+    margin-top: -40px;
+    margin-bottom: 90px;
+  }
+  
+
+
+  .planos {
+    margin-top: -50px;
+    background-color: black;
+    min-height: 100vh;
+    padding: 90px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .card {
+    position: relative;
+    background-color: #0a0a0a;
+    border: 2px solid #ff3e24;
+    border-radius: 10px;
+    padding: 2px 20px 20px 20px;
+    width: 30%;
+    max-width: 340px;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(255, 98, 36, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 790px;
+    transition: 0.4s ease;
+  }
+  
+  .card img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0px auto;
+  }
+  
+  h2 {
+    margin-top: -20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  button {
+    background-color: #ff3e24;
+    color: rgb(255, 250, 250);
+    border: none;
+    padding: 15px 18px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: auto;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: #ff3e24;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  
+  .card ul li {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 15px 0;
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+    color: #fff;
+  }
+  
+  .card ul li::before {
+    content: "✔";
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    background-color: #ff3333;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .preco {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3333;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  /* Linha branca cortando preço antigo */
+  .preco::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 23%;
+    width: 24%;
+    height: 2px;
+    background: white;
+    transform: rotate(-15deg);
+  }
+  
+  .preco span {
+    font-size: 20px;
+    display: block;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+  
+  .p {
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .condicao {
+    margin-top: -10px;
+    font-size: 11px;
+    color: #bbb;
+  }
+  
+  /* 🔥 Selo superior */
+  .tag-card {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .tag-card i {
+    font-size: 1rem;
+  }
+  
+  /* Recomendado */
+  .recomendado {
+    background: linear-gradient(135deg, #eb1919, #f16726);
+    color: #fff;
+    box-shadow: 0px 0px 12px rgba(255, 98, 36, 0.6);
+  }
+  
+  /* Mais Popular */
+  .popular .tag-card {
+    background: linear-gradient(135deg, #eb1919, #f16726);
+    color: #fff;
+    
+    box-shadow: 0px 0px 18px rgba(255, 60, 20, 0.8);
+  }
+  
+  .popular .tag-card i {
+    color: white;
+  }
+  
+  /* 🔥 Efeito de fogo no card popular */
+  .card.popular {
+    animation: fireGlow 1.5s infinite alternate;
+    border-color: #ff3e24;
+    box-shadow: 0 0 30px rgba(255, 60, 20, 0.8);
+  }
+  
+  @keyframes fireGlow {
+    from {
+      box-shadow: 0 0 20px rgba(255, 60, 20, 0.5);
+    }
+    to {
+      box-shadow: 0 0 40px rgba(255, 100, 50, 1);
+    }
+  }
+  
+
+  
+  /* FAQ */
+  .highlight1 {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .faq-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  
+  .faq-item {
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px 20px;
+    color: #ff3333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-item.active .faq-question {
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #111;
+    color: #ccc;
+    padding: 0 20px;
+    border-top: 1px solid #333;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px 20px;
+    opacity: 1;
+  }
+  
+  /* Ícone + que gira em X */
+  .faq-question .icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+  }
+  
+  .faq-question .icon::before,
+  .faq-question .icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: #ff3333;
+    transition: transform 0.4s ease;
+    transform-origin: center;
+  }
+  
+  .faq-question .icon::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .faq-question .icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .faq-item.active .icon {
+    transform: rotate(45deg);
+  }
+  
+  .duvidas1 {
+    background-color: #000000;
+    padding: 10px;
+  }
+  
+  /* Responsivo */
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+    }
+    .hero-image {
+      display: none;
+    }
+    .container {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .card {
+      width: 90%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+
+  /* Seção Sobre */
+.sobre {
+    background: linear-gradient(135deg, #000 0%, #1f0e0a 100%);
+    padding: 180px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+    flex-wrap: wrap; /* responsivo */
+  }
+  
+  /* Imagem à esquerda */
+  .sobre-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sobre-imagem img {
+    width: 160%;
+    
+    border-radius: 12px;
+    border: solid 2px #ff3333;
+    box-shadow: 0px 0px 20px rgba(255, 51, 51, 0.3);
+  }
+  
+  /* Texto à direita */
+  .sobre-texto {
+    flex: 2;
+    color: #fff;
+    padding-left: 40px;
+  }
+  
+  .sobre-texto h2 {
+    margin-left: 140px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ff3e24;
+  }
+  
+  .sobre-texto p {
+    margin-left: 140px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ddd;
+  }
+  
+
+
+ .premiacoes {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px;
+  overflow: hidden;
+}
+
+.premiacoes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(fundo.png);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  z-index: -1; /* fica só no fundo */
+}
+
+.premiacoes h2 {
+  margin-top: 50px;
+  font-size: 2.4rem;
+  margin-bottom: -20px;
+  color: #fff;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.premiacoes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1; /* garante que o conteúdo fica acima do fundo */
+}
+
+.placas {
+  width: 550px;
+  max-width: 90%;
+  z-index: 2;
+}
+
+.pulseira {
+  margin-top: 290px;
+  width: 290px;
+  max-width: 30%;
+  position: relative;
+  z-index: 3;
+}
+
+.pulseira-esquerda {
+  margin-right: -190px;
+}
+
+.pulseira-direita {
+  margin-left: -190px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  
+
+
+
+  .pulseira-esquerda {
+      margin-top: 220px;
+    
+}
+
+.pulseira-direita {
+   margin-top: 220px;
+}
+
+}
+
+
+  /* Responsividade */
+  @media screen and (max-width: 900px) {
+    .sobre-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sobre-imagem img {
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+  }
+  
+
+  /* Botão fixo do WhatsApp */
+  .whatsapp-button {
+    position: fixed; /* Faz o botão flutuar na tela */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    bottom: 40px; /* Distância da parte inferior da tela */
+    right: 40px; /* Distância da parte direita da tela */
+    background-color: #ff3333; /* Cor de fundo do WhatsApp */
+    color: #FFF; /* Cor do ícone (se for um ícone de texto, mas geralmente usamos imagem) */
+    border-radius: 50px; /* Deixa o botão redondo */
+    text-align: center; /* Centraliza o conteúdo (ícone) */
+    font-size: 30px; /* Tamanho do ícone (se for um ícone de fonte) */
+    box-shadow: 0px 0px 20px rgba(255, 51, 51, 0.596);
+    z-index: 100; /* Garante que o botão fique acima de outros elementos */
+    display: flex; /* Para centralizar a imagem dentro do botão */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.whatsapp-button img {
+    width: 35px; /* Tamanho da imagem do ícone */
+    height: 35px; /* Altura da imagem do ícone */
+}
+
+/* Efeito de hover (quando o mouse passa por cima) */
+.whatsapp-button:hover {
+  background-color: #FFF; /* Cor de fundo do WhatsApp */
+    color: #ff3333;
+    transform: scale(1.1); /* Aumenta um pouco o botão */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+
+.whatsapp-button.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
+  }
+  
+  /* Quando aparece com animação */
+  .whatsapp-button.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: all 0.6s ease;
+  }
+
+
+
+  /* Seção Aprender */
+.aprender {
+    background-color: #000;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .aprender h2 {
+    font-size: 2rem;
+    margin-bottom: 60px;
+    color: #fff;
+    line-height: 1.5;
+  }
+  
+  .aprender .highlight-green {
+    color: #ff3e24;
+  }
+  
+  /* Container */
+  .aprender-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Card */
+  .aprender-card {
+    background-color: #0a0a0a;
+    border: 2px solid #ff3333;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.596);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .aprender-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 51, 51, 0.596);
+  }
+  
+  .aprender-card h3 {
+    color: #ff3e24;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .aprender-card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #ff3e24;
+  }
+  
+  .aprender-card p {
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.6;
+  }
+  
+
+  .resultados1 {
+    margin-top: -50px;
+    background: #000;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+    /* Seção Resultados */
+
+
+  .resultados1 h2 {
+    margin-top: 50px;
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+    color: #fff;
+    line-height: 1.4;
+  }
+  
+  .highlight-green {
+    color: #ff3e24;
+  }
+  
+  /* Container do Swiper */
+  .resultados1 .swiper {
+    width: 100%;
+    max-width: 1400px; /* aumenta limite para as setas não cortarem */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Slides */
+  .resultados1 .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resultados1 .swiper-slide img {
+    max-width: 300px;
+    border: 2px solid #ff3e24;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.5);
+  }
+  
+  /* Paginação (bolinhas) */
+  .resultados1 .swiper-pagination {
+    position: relative;   /* relativo ao carrossel */
+    bottom: -25px;        /* joga mais pra baixo */
+    margin-top: 50px;     /* espaço extra */
+    text-align: center;
+  }
+  
+  .resultados1 .swiper-pagination-bullet {
+    background: #ff3e24;  /* cor bolinhas inativas */
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  
+  .resultados1 .swiper-pagination-bullet-active {
+    background: #ffffff; /* cor bolinha ativa */
+    opacity: 1;
+  }
+  
+  /* Setas */
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* Ícones das setas (SVG) */
+  .swiper-button-prev svg,
+  .swiper-button-next svg {
+    color: #ff3e24;
+    fill: #ff3e24 !important;   /* cor verde neon */
+    stroke: #ff3e24 !important; /* reforço */
+    width: 29px !important;
+    height: 34px !important;
+  }
+  
+  /* Posição das setas */
+  .swiper-button-prev {
+    left: -40px;  /* mais pra fora do container */
+  }
+  
+  .swiper-button-next {
+    right: -40px;
+  }
+  
+
+  /* ======================= */
+/*     RESPONSIVIDADE      */
+/* ======================= */
+
+@media screen and (max-width: 1280px) {
+    .hero-image img {
+     
+      
+       margin-left: 30px;
+        margin-top: 140px;/* mais próxima do botão */
+       
+    }
+
+    .sobre-imagem img {
+      margin-left: 240px;
+      width: 130%;
+      max-width: 620px;
+      border-radius: 12px;
+      border: solid 2px #ff3333;
+      box-shadow: 0px 0px 20px rgba(255, 51, 51, 0.3);
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .hero-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 80px 20px;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+      margin: 0 auto 20px;
+    }
+  
+    .cta-button {
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto 0;
+    }
+    
+  }
+
+
+
+  
+
+  /* Hero no Mobile */
+/* Responsividade Hero Section */
+@media screen and (max-width: 768px) {
+    .hero-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+      padding: 0;
+    }
+  
+    .hero-content h1 {
+      font-size: 1.8rem;
+      margin: 15px 0;
+    }
+
+      .hero-content h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: -50px;
+    
+  }
+     
+
+    
+    .hero-content p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+  
+    .cta-button {
+       
+      margin: 15px auto 10px auto; /* 🔥 botão mais próximo da imagem */
+      display: inline-block;
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  
+    /* 🔥 Imagem maior e mais próxima */
+    .hero-image {
+       
+       margin-top: -60px;/* mais próxima do botão */
+        position: relative;
+        right: auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    
+      .hero-image img {
+       
+        width: 220%;   /* 🔥 força a imagem a ser maior que a tela */
+        max-width: 600px; /* limite maior */
+        height: auto;
+      }
+  }
+  
+  
+
+  /* Responsividade da seção SOBRE */
+@media screen and (max-width: 768px) {
+    .sobre {
+      padding: 60px 20px;
+    }
+  
+    .sobre-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+  
+    .sobre-imagem img {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 12px;
+      border: solid 2px #ff3333;
+      box-shadow: 0px 0px 20px rgba(255, 51, 51, 0.3);
+    }
+  
+    .sobre-texto {
+      padding: 0;
+    }
+  
+    .sobre-texto h2 {
+      font-size: 2.4rem;
+      margin: 20px 0;
+      text-align: center;
+      margin-left: 0; /* remove margem fixa */
+    }
+  
+    .sobre-texto p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 10px auto;
+      text-align: center;
+      max-width: 100%;
+      margin-left: 0; /* remove margem fixa */
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 40px;
+    }
+  
+    .card {
+      width: 90%;
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .sobre-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sobre-imagem img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+  
+    .resultados .swiper-slide img,
+    .resultados1 .swiper-slide img {
+      max-width: 220px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.6rem;
+    }
+  
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+  
+    .cta-button {
+      font-size: 1rem;
+      padding: 12px 20px;
+    }
+  
+    .aprender-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .aprender-card {
+      padding: 20px;
+    }
+  
+    .aprender-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .aprender-card p {
+      font-size: 0.9rem;
+    }
+  }
+  
+
+  .garantia {
+    background-color: #000;
+    text-align: center;
+    padding: 60px 20px;
+    color: #fff;
+  }
+  
+  .garantia h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff; /* vermelho neon */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  
+  .garantia-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .selo-garantia {
+    width: 420px;
+    max-width: 120%;
+   /* efeito glow vermelho */
+  }
+  
+  .garantia p {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e6e6e6;
+  }
+  
+  .garantia .highlight {
+    font-weight: 800;
+
+    color: #ff1a1a;
+
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .garantia h2 {
+      font-size: 1.3rem;
+    }
+  
+    .garantia p {
+      font-size: 1rem;
+    }
+  
+    .selo-garantia {
+      width: 180px;
+    }
+  }
+  
+
+  /* Seção Final de Dúvidas */
+.duvidas-final {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.duvidas-final h2 {
+ font-size: 2.1rem;
+
+    color: #fff;
+    line-height: 1.4;
+}
+
+    
+
+.duvidas-final .highlight-red {
+  color: #ff1a1a;
+}
+
+.duvidas-final p {
+  font-size: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.btn-whatsapp-final {
+  display: flex;               /* Flex para alinhar ícone e texto */
+  align-items: center;         /* Centraliza verticalmente */
+  justify-content: center;     /* Centraliza horizontalmente */
+  gap: 12px;                   /* Espaço entre ícone e texto */
+  background: #0a0a0a;
+  border: 2px solid #ff3e24;
+  box-shadow: 0px 0px 12px rgba(255, 98, 36, 0.5);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 15px 10px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin: 30px auto;           /* Centraliza o botão */
+  max-width: 400px;            /* Largura máxima */
+}
+
+.btn-whatsapp-final i {
+  font-size: 28px;
+  color: #ff3e24;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-whatsapp-final:hover {
+  transform: scale(1.1);
+  background: rgba(255, 62, 36, 0.2);
+  color: #fff;
+}
+
+.btn-whatsapp-final:hover i {
+  color: #fff;                 /* Ícone muda para branco no hover */
+  transform: scale(1.1);       /* Leve zoom no hover */
+}
+
+.duvidas-final small {
+  display: block;
+  font-size: 0.8rem;
+  color: #bbb;
+  max-width: 800px;   /* <<< limita a largura máxima */
+  margin: 20px auto 0 auto;  /* centraliza */
+  line-height: 1.4;
+  text-align: center; /* centraliza o conteúdo */
+}
+
+
+.footer {
+  background-color: #000;
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.footer-logo {
+  width: 30px; /* tamanho da logo */
+  height: auto;
+  margin-bottom: 0px; /* espaço entre logo e texto */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: none; /* remove brilho */
+}
+
+.footer p {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+img {
+  -webkit-user-drag: none;   /* bloqueia arrastar imagem */
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+  pointer-events: none;       /* impede clique com botão direito */
+}

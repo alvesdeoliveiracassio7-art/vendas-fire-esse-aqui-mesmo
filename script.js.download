@@ -1,0 +1,83 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // FAQ
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    if (!question.querySelector(".icon")) {
+      let icon = document.createElement("span");
+      icon.classList.add("icon");
+      question.appendChild(icon);
+    }
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
+      if (isActive) {
+        item.classList.remove("active");
+      } else {
+        item.classList.add("active");
+      }
+    });
+  });
+
+  // Swiper Carrossel (para todos os que existem na página)
+  const swipers = document.querySelectorAll(".resultados-swiper");
+  swipers.forEach(swiperEl => {
+    new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: swiperEl.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: swiperEl.querySelector(".swiper-button-next"),
+        prevEl: swiperEl.querySelector(".swiper-button-prev"),
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  });
+
+  // Botões dos planos → abrir link
+  document.querySelectorAll(".btn-plano").forEach(botao => {
+    botao.addEventListener("click", () => {
+      const link = botao.getAttribute("data-link");
+      if (link) {
+        window.open(link, "_blank"); // abre em nova aba
+      }
+    });
+  });
+
+  // Scroll suave até os planos (quando clicar no botão principal do hero)
+  const heroBtn = document.querySelector(".cta-button");
+  const planosSection = document.querySelector(".planos");
+
+  if (heroBtn && planosSection) {
+    heroBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      planosSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  // ================================
+  // 🎬 INTRO VIDEO - FIRE VENDAS
+  // ================================
+
+  
+  
+  
+});
